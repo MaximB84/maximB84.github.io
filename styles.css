@@ -17,7 +17,7 @@ body {
   background-color: #fafafa;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* for sticky footer feeling */
+  min-height: 100vh;
 }
 
 img {
@@ -41,7 +41,7 @@ h1, h2, h3 {
   letter-spacing: 0.03em;
 }
 
-/* ----- Accessibility helpers ----- */
+/* ----- Skip Link ----- */
 .skip-link {
   position: absolute;
   left: -999px;
@@ -89,7 +89,7 @@ h1, h2, h3 {
 }
 
 .site-nav {
-  display: none; /* mobile: hidden behind burger */
+  display: none; /* mobile hidden */
 }
 
 .site-nav ul {
@@ -114,15 +114,16 @@ h1, h2, h3 {
   cursor: pointer;
 }
 
-/* shown when JS toggles .nav-open on body */
+/* Show navigation when JS toggles body.nav-open */
 body.nav-open .site-nav {
   display: block;
   position: absolute;
   right: 0.5rem;
   top: 3.1rem;
   background: #ffffff;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  border-radius: 0.5rem;
 }
 
 /* ----- Sections ----- */
@@ -139,6 +140,7 @@ body.nav-open .site-nav {
   margin: 0 auto;
 }
 
+/* ----- HERO ----- */
 .hero {
   border-bottom: 1px solid #e0e0e0;
 }
@@ -152,14 +154,52 @@ body.nav-open .site-nav {
   margin-bottom: 1rem;
 }
 
-.hero-carousel {
-  margin-top: 1.5rem;
-}
-
 .random-tip {
   min-height: 1.5rem;
   font-style: italic;
   margin-top: 0.25rem;
+}
+
+/* ----- HERO CAROUSEL ----- */
+.hero-carousel {
+  margin-top: 1.5rem;
+  position: relative;
+}
+
+.carousel-slide {
+  display: none;
+}
+
+.carousel-slide.is-active {
+  display: block;
+}
+
+.carousel-slide figcaption {
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  text-align: center;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.carousel-controls button {
+  border: none;
+  background: #005a8d;
+  color: #fff;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.carousel-controls button:hover,
+.carousel-controls button:focus-visible {
+  filter: brightness(1.15);
 }
 
 /* ----- Buttons ----- */
@@ -218,7 +258,7 @@ body.nav-open .site-nav {
   background-color: #ffe9c7;
 }
 
-/* ----- Travel tips layout ----- */
+/* ----- Tips Section ----- */
 .tips-layout {
   display: flex;
   flex-direction: column;
@@ -242,7 +282,7 @@ body.nav-open .site-nav {
   font-size: 1.2rem;
 }
 
-/* Map iframe */
+/* Map */
 .map-wrapper iframe {
   width: 100%;
   border: 0;
@@ -272,46 +312,6 @@ body.nav-open .site-nav {
   margin-top: 0.25rem;
 }
 
-/* ----- Carousel ----- */
-.hero-carousel {
-  position: relative;
-}
-
-.carousel-slide {
-  display: none;
-}
-
-.carousel-slide.is-active {
-  display: block;
-}
-
-.carousel-slide figcaption {
-  font-size: 0.85rem;
-  margin-top: 0.25rem;
-}
-
-.carousel-controls {
-  display: flex;
-  justify-content: flex-end;
-  gap: 0.25rem;
-  margin-top: 0.25rem;
-}
-
-.carousel-controls button {
-  border: none;
-  background: #005a8d;
-  color: #fff;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 999px;
-  cursor: pointer;
-}
-
-.carousel-controls button:hover,
-.carousel-controls button:focus-visible {
-  filter: brightness(1.1);
-}
-
 /* ----- Footer ----- */
 .site-footer {
   margin-top: auto;
@@ -327,7 +327,7 @@ body.nav-open .site-nav {
   color: #ffdd67;
 }
 
-/* ----- TABLET LAYOUT (≥ 600px) ----- */
+/* ----- TABLET (≥ 600px) ----- */
 @media (min-width: 600px) {
 
   .site-nav {
@@ -337,7 +337,7 @@ body.nav-open .site-nav {
 
   .site-nav ul {
     flex-direction: row;
-    gap: 1rem;
+    gap: 1.25rem;
   }
 
   .menu-toggle {
@@ -361,16 +361,19 @@ body.nav-open .site-nav {
   }
 }
 
-/* ----- DESKTOP LAYOUT (≥ 900px) ----- */
+/* ----- DESKTOP (≥ 900px) ----- */
 @media (min-width: 900px) {
 
   .section {
     padding: 3.5rem 1.5rem;
   }
 
+  /* Side-by-side hero layout */
   .hero {
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 2rem;
   }
 
   .hero-text,
@@ -379,7 +382,7 @@ body.nav-open .site-nav {
   }
 
   .hero-text {
-    padding-right: 2rem;
+    padding-right: 1rem;
   }
 
   .hero-carousel {
