@@ -1,4 +1,6 @@
-// ----- Mobile navigation toggle -----
+/* ---------------------------
+   Mobile Navigation Toggle
+----------------------------*/
 const menuToggle = document.querySelector('.menu-toggle');
 const body = document.body;
 const nav = document.getElementById('site-nav');
@@ -9,7 +11,7 @@ if (menuToggle && nav) {
     menuToggle.setAttribute('aria-expanded', String(isOpen));
   });
 
-  // Close menu when a nav link is clicked (on mobile)
+  // Close menu when a nav link is selected
   nav.addEventListener('click', (event) => {
     if (event.target.tagName === 'A' && body.classList.contains('nav-open')) {
       body.classList.remove('nav-open');
@@ -18,26 +20,37 @@ if (menuToggle && nav) {
   });
 }
 
-// ----- Tip of the Day -----
+
+/* ---------------------------
+   Tip of the Day
+----------------------------*/
 const tips = [
   'Buy tickets for Sagrada Família in advance to avoid long lines.',
-  'Walk as much as you can – many sights are closer than they look on the map.',
-  'Try to explore at least one neighbourhood away from the tourist areas.',
-  'Carry a reusable water bottle – there are free drinking fountains around the city.',
+  'Walk as much as you can – many sights are closer than they look.',
+  'Explore at least one neighbourhood away from tourist areas.',
+  'Carry a reusable water bottle – free fountains are everywhere.',
   'Use the metro late at night instead of taxis to save money.'
 ];
 
 const tipButton = document.getElementById('random-tip-btn');
 const tipOutput = document.getElementById('random-tip');
 
-if (tipButton && tipOutput) {
-  tipButton.addEventListener('click', () => {
-    const randomIndex = Math.floor(Math.random() * tips.length);
-    tipOutput.textContent = tips[randomIndex];
-  });
+function showRandomTip() {
+  const randomIndex = Math.floor(Math.random() * tips.length);
+  tipOutput.textContent = tips[randomIndex];
 }
 
-// ----- Simple image carousel -----
+if (tipButton && tipOutput) {
+  tipButton.addEventListener('click', showRandomTip);
+
+  // Show a random tip on load for better UX
+  showRandomTip();
+}
+
+
+/* ---------------------------
+   Image Carousel (Manual)
+----------------------------*/
 const slides = document.querySelectorAll('.carousel-slide');
 const prevBtn = document.querySelector('.carousel-prev');
 const nextBtn = document.querySelector('.carousel-next');
@@ -50,6 +63,7 @@ function updateSlides(index) {
   });
 }
 
+// Only activate if carousel exists
 if (slides.length > 0 && prevBtn && nextBtn) {
   prevBtn.addEventListener('click', () => {
     currentSlide = (currentSlide - 1 + slides.length) % slides.length;
@@ -60,10 +74,7 @@ if (slides.length > 0 && prevBtn && nextBtn) {
     currentSlide = (currentSlide + 1) % slides.length;
     updateSlides(currentSlide);
   });
-}
 
-// Optional: show initial random tip on load
-if (tipOutput) {
-  const randomIndex = Math.floor(Math.random() * tips.length);
-  tipOutput.textContent = tips[randomIndex];
+  // Set initial state
+  updateSlides(currentSlide);
 }
