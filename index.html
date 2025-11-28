@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Barcelona Travel Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="One-page Barcelona travel blog with sights, food, travel tips and photo gallery.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Accessibility: skip link -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="logo">
+      <span>Barcelona</span>
+      <span>Travel Blog</span>
+    </div>
+
+    <!-- Mobile menu button -->
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">
+      <span class="sr-only">Toggle navigation menu</span>
+      ☰
+    </button>
+
+    <nav id="site-nav" class="site-nav">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#sights">Sights</a></li>
+        <li><a href="#food">Food &amp; Culture</a></li>
+        <li><a href="#tips">Travel Tips</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO / HOME -->
+    <section id="home" class="section hero" aria-labelledby="hero-heading">
+      <div class="hero-text">
+        <h1 id="hero-heading">Welcome to Barcelona</h1>
+        <p class="hero-subtitle">Discover the city of sun, art, and tapas.</p>
+
+        <button type="button" class="btn primary" id="random-tip-btn">
+          Tip of the Day
+        </button>
+        <p id="random-tip" class="random-tip" aria-live="polite"></p>
+
+        <a href="#sights" class="btn secondary">Start exploring</a>
+      </div>
+
+      <!-- EXTRA: simple image carousel without autoplay -->
+      <div class="hero-carousel" aria-label="Barcelona highlights">
+        <figure class="carousel-slide is-active">
+          <img src="images/sagrada-familia.jpg"
+               alt="The Sagrada Família basilica in Barcelona at sunset.">
+          <figcaption>Sagrada Família</figcaption>
+        </figure>
+
+        <figure class="carousel-slide">
+          <img src="images/park-guell.jpg"
+               alt="Colorful mosaics in Park Güell.">
+          <figcaption>Park Güell</figcaption>
+        </figure>
+
+        <figure class="carousel-slide">
+          <img src="images/barceloneta.jpg"
+               alt="Barceloneta beach with waves and people walking.">
+          <figcaption>Barceloneta Beach</figcaption>
+        </figure>
+
+        <div class="carousel-controls">
+          <button type="button" class="carousel-prev" aria-label="Previous image">‹</button>
+          <button type="button" class="carousel-next" aria-label="Next image">›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIGHTS -->
+    <section id="sights" class="section section-alt">
+      <div class="section-inner">
+        <h2>Sights</h2>
+        <p>Some of the must-see places when you visit Barcelona.</p>
+
+        <div class="card-grid card-grid-3">
+          <article class="card">
+            <figure>
+              <img src="images/gothic-quarter.jpg"
+                   alt="Narrow street in the Gothic Quarter with old buildings.">
+              <figcaption>Gothic Quarter</figcaption>
+            </figure>
+            <p>Get lost in the tiny streets and discover hidden squares and cafes.</p>
+          </article>
+
+          <article class="card">
+            <figure>
+              <img src="images/casa-batllo.jpg"
+                   alt="The colorful facade of Casa Batlló by Gaudí.">
+              <figcaption>Casa Batlló</figcaption>
+            </figure>
+            <p>One of Gaudí’s masterpieces with a fantastic, dreamlike facade.</p>
+          </article>
+
+          <article class="card">
+            <figure>
+              <img src="images/montjuic.jpg"
+                   alt="View from Montjuïc hill over Barcelona and the sea.">
+              <figcaption>Montjuïc</figcaption>
+            </figure>
+            <p>Take the cable car and enjoy panoramic views over the whole city.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOD & CULTURE -->
+    <section id="food" class="section">
+      <div class="section-inner">
+        <h2>Food &amp; Culture</h2>
+        <p>Tapas, markets, and long evenings on lively plazas.</p>
+
+        <div class="card-grid card-grid-3">
+          <article class="card">
+            <figure>
+              <img src="images/tapas.jpg" alt="Small plates of tapas on a wooden table.">
+              <figcaption>Tapas Bars</figcaption>
+            </figure>
+            <p>Share plates with friends in El Born or around Plaça del Sol.</p>
+          </article>
+
+          <article class="card">
+            <figure>
+              <img src="images/boqueria.jpg"
+                   alt="La Boqueria market with fresh fruit and vegetables.">
+              <figcaption>La Boqueria</figcaption>
+            </figure>
+            <p>Famous food market on La Rambla – colorful, noisy, and delicious.</p>
+          </article>
+
+          <article class="card highlight">
+            <h3>Tip of the Day</h3>
+            <p>Have your main meal at lunchtime – many restaurants offer cheaper
+              <em>menú del día</em> with three courses.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRAVEL TIPS -->
+    <section id="tips" class="section section-alt">
+      <div class="section-inner">
+        <h2>Travel Tips</h2>
+
+        <div class="tips-layout">
+          <ul class="tips-list">
+            <li>
+              <span class="tip-icon" aria-hidden="true">🚌</span>
+              <strong>Public transport:</strong> Buy a T-casual ticket to save money.
+            </li>
+            <li>
+              <span class="tip-icon" aria-hidden="true">🌞</span>
+              <strong>Best time:</strong> Late spring and early autumn are warm
+              but not too hot.
+            </li>
+            <li>
+              <span class="tip-icon" aria-hidden="true">ℹ️</span>
+              <strong>Tourist info:</strong> Start at Plaça de Catalunya to grab free maps.
+            </li>
+          </ul>
+
+          <!-- EXTRA: embedded map plugin -->
+          <div class="map-wrapper" aria-label="Map of central Barcelona">
+            <iframe
+              title="Map of Barcelona city center"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=2.146%2C41.372%2C2.204%2C41.403&amp;layer=mapnik"
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="section">
+      <div class="section-inner">
+        <h2>Photo Gallery</h2>
+        <p>A few impressions from around the city.</p>
+
+        <div class="gallery-grid">
+          <figure>
+            <img src="images/arc-de-triomf.jpg" alt="Arc de Triomf with people walking.">
+            <figcaption>Arc de Triomf</figcaption>
+          </figure>
+          <figure>
+            <img src="images/bunker-del-carmel.jpg" alt="View over the city from Bunkers del Carmel.">
+            <figcaption>City view</figcaption>
+          </figure>
+          <figure>
+            <img src="images/el-born.jpg" alt="Evening atmosphere in the El Born district.">
+            <figcaption>El Born</figcaption>
+          </figure>
+          <figure>
+            <img src="images/magic-fountain.jpg" alt="Magic Fountain light show at night.">
+            <figcaption>Magic Fountain</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Barcelona Travel Blog – created by Maxim Basovskiy</p>
+    <a href="#top" class="back-to-top">Back to top ↑</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
