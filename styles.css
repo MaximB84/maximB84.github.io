@@ -398,3 +398,24 @@ body.nav-open .site-nav {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+/* Einheitliche Höhe für Bilder in Cards & Gallery */
+.card figure img,
+.gallery-grid figure img {
+    width: 100%;
+    height: 250px;          /* kannst du auf 220–300px anpassen */
+    object-fit: cover;      /* Bild wird sauber zugeschnitten */
+    border-radius: 0.5rem;  /* passt zum Design */
+}
+
+/* Karten gleich hoch machen – damit die Texte nicht unterschiedlich wirken */
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Optional – Text in Food & Culture etwas länger (nur kosmetisch) */
+#food .card p {
+    min-height: 60px;       /* sorgt dafür, dass Textblöcke harmonischer sind */
+}
