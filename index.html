@@ -11,10 +11,10 @@
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
+  <!-- HEADER -->
   <header class="site-header">
     <div class="logo">
-      <span>Barcelona</span>
-      <span>Travel Blog</span>
+      <span>Barcelona</span><span>Travel Blog</span>
     </div>
 
     <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">
@@ -48,23 +48,21 @@
 
       <div class="hero-carousel" aria-label="Barcelona highlights">
         <figure class="carousel-slide is-active">
-          <img src="images/barcelona-sagrada-familia.jpg" alt="The Sagrada Família basilica in Barcelona.">
+          <img src="images/barcelona-sagrada-familia.jpg" alt="The Sagrada Família basilica">
           <figcaption>Sagrada Família</figcaption>
         </figure>
-
         <figure class="carousel-slide">
-          <img src="images/barcelona-park-guell.jpg" alt="Colorful mosaic benches in Park Güell.">
+          <img src="images/barcelona-park-guell.jpg" alt="Park Güell mosaics">
           <figcaption>Park Güell</figcaption>
         </figure>
-
         <figure class="carousel-slide">
-          <img src="images/barcelona-hafen.jpg" alt="Barcelona harbor with blue water and boats.">
+          <img src="images/barcelona-hafen.jpg" alt="Barcelona harbor">
           <figcaption>Barcelona Harbor</figcaption>
         </figure>
 
         <div class="carousel-controls">
-          <button type="button" class="carousel-prev" aria-label="Previous image">‹</button>
-          <button type="button" class="carousel-next" aria-label="Next image">›</button>
+          <button class="carousel-prev">‹</button>
+          <button class="carousel-next">›</button>
         </div>
       </div>
     </section>
@@ -77,39 +75,31 @@
 
         <div class="card-grid card-grid-3">
           <article class="card">
-            <figure>
-              <img src="images/barcelona-arc-de-triomf.jpg" alt="Arc de Triomf in Barcelona.">
-              <figcaption>Arc de Triomf</figcaption>
-            </figure>
+            <figure><img src="images/barcelona-arc-de-triomf.jpg"><figcaption>Arc de Triomf</figcaption></figure>
             <p>A beautiful reddish arch built for the 1888 World Fair.</p>
           </article>
 
           <article class="card">
-            <figure>
-              <img src="images/barcelona-casa-batllo.jpg" alt="The colorful facade of Casa Batlló by Gaudí.">
-              <figcaption>Casa Batlló</figcaption>
-            </figure>
+            <figure><img src="images/barcelona-casa-batllo.jpg"><figcaption>Casa Batlló</figcaption></figure>
             <p>One of Gaudí’s masterpieces with a dreamlike facade.</p>
           </article>
 
           <article class="card">
-            <figure>
-              <img src="images/barcelona-placa-espanya.jpg" alt="Placa Espanya with fountains and towers.">
-              <figcaption>Plaça Espanya</figcaption>
-            </figure>
+            <figure><img src="images/barcelona-placa-espanya.jpg"><figcaption>Plaça Espanya</figcaption></figure>
             <p>One of the most famous squares with great city views.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- FOOD & CULTURE -->
+    <!-- FOOD -->
     <section id="food" class="section">
       <div class="section-inner">
         <h2>Food & Culture</h2>
         <p>Tapas, markets, and long evenings on lively plazas.</p>
 
         <div class="card-grid card-grid-3">
+
           <article class="card">
             <figure><img src="images/barcelona-hotel-w.jpg"><figcaption>W Hotel Area</figcaption></figure>
             <p>Fantastic area for seaside dining and relaxing.</p>
@@ -120,10 +110,20 @@
             <p>Great views and a fun cultural experience.</p>
           </article>
 
-          <!-- NEW DYNAMIC TIP CARD -->
-          <article class="card highlight" id="daily-tip-card">
-            <h3>Tip of the Day</h3>
-            <p id="daily-tip-text">Loading tip...</p>
+          <!-- UPGRADED DYNAMIC FOOD TIP CARD -->
+          <article class="card highlight tip-card">
+            <div class="tip-header">
+              <span class="tip-emoji">💡</span>
+              <h3>Food Tip of the Day</h3>
+            </div>
+
+            <p id="daily-tip-text">Loading...</p>
+
+            <ul id="daily-tip-extra" class="tip-list-small">
+              <li>🍷 Order house wine – cheap & surprisingly good</li>
+              <li>🍅 Pan con tomate is a must-try breakfast</li>
+              <li>🥘 Look for menu del día – best value lunch</li>
+            </ul>
           </article>
         </div>
       </div>
@@ -133,6 +133,7 @@
     <section id="tips" class="section section-alt">
       <div class="section-inner">
         <h2>Travel Tips</h2>
+
         <div class="tips-layout">
           <ul class="tips-list">
             <li>🚌 <strong>Public transport:</strong> Buy a T-casual ticket to save money.</li>
@@ -141,9 +142,7 @@
           </ul>
 
           <div class="map-wrapper">
-            <iframe title="Barcelona Map"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=2.146%2C41.372%2C2.204%2C41.403&amp;layer=mapnik"
-              loading="lazy"></iframe>
+            <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=2.146%2C41.372%2C2.204%2C41.403&layer=mapnik"></iframe>
           </div>
         </div>
       </div>
@@ -154,6 +153,7 @@
       <div class="section-inner">
         <h2>Photo Gallery</h2>
         <p>A few impressions from around the city.</p>
+
         <div class="gallery-grid">
           <figure><img src="images/barcelona-park-guell.jpg"><figcaption>Park Güell</figcaption></figure>
           <figure><img src="images/barcelona-sagrat-cor.jpg"><figcaption>Sagrat Cor</figcaption></figure>
