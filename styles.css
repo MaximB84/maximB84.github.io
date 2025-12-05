@@ -403,19 +403,19 @@ body.nav-open .site-nav {
 .card figure img,
 .gallery-grid figure img {
     width: 100%;
-    height: 250px;          /* kannst du auf 220–300px anpassen */
-    object-fit: cover;      /* Bild wird sauber zugeschnitten */
-    border-radius: 0.5rem;  /* passt zum Design */
+    height: 250px !important;   /* erzwingt gleiche Höhe */
+    object-fit: cover;
+    border-radius: 0.5rem;
 }
 
-/* Karten gleich hoch machen – damit die Texte nicht unterschiedlich wirken */
+/* Karten einheitlich hoch halten */
 .card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-/* Optional – Text in Food & Culture etwas länger (nur kosmetisch) */
+/* Optional – sorgt dafür, dass Food & Culture Text gleichmäßig wirkt */
 #food .card p {
-    min-height: 60px;       /* sorgt dafür, dass Textblöcke harmonischer sind */
+    min-height: 70px;
 }
