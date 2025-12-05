@@ -228,3 +228,19 @@ body.nav-open .site-nav{
   .card-grid-3{ grid-template-columns:repeat(3,1fr); }
   .gallery-grid{ grid-template-columns:repeat(4,1fr); }
 }
+
+/* --- Food Tip Card Verbesserung --- */
+#food .card.highlight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 320px; /* gleiche Höhe wie Karten daneben */
+    padding: 1.5rem;
+}
+
+/* Textblock optisch harmonischer */
+#food .card.highlight p {
+    font-size: 1rem;
+    line-height: 1.55;
+    margin-top: 1rem;
+}
