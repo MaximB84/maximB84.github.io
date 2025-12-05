@@ -244,3 +244,39 @@ body.nav-open .site-nav{
     line-height: 1.55;
     margin-top: 1rem;
 }
+
+/* --- Tip Card Visual Upgrade --- */
+.tip-card {
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tip-header {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    font-size: 1.2rem;
+}
+
+.tip-emoji {
+    font-size: 1.6rem;
+}
+
+#food-tip-main {
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-top: .5rem;
+    padding-right: .3rem;
+}
+
+.tip-list-small {
+    margin-top: 1rem;
+    padding-left: 1rem;
+    font-size: .95rem;
+    line-height: 1.5;
+}
+
+.tip-list-small li { margin-bottom: .4rem; }
