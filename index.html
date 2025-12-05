@@ -17,9 +17,8 @@
       <span>Barcelona</span><span>Travel Blog</span>
     </div>
 
-    <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">
-      <span class="sr-only">Toggle navigation menu</span> ☰
-    </button>
+    <!-- FIXED MENU BUTTON -->
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">☰</button>
 
     <nav id="site-nav" class="site-nav">
       <ul>
@@ -48,21 +47,21 @@
 
       <div class="hero-carousel" aria-label="Barcelona highlights">
         <figure class="carousel-slide is-active">
-          <img src="images/barcelona-sagrada-familia.jpg" alt="The Sagrada Família basilica">
+          <img src="images/barcelona-sagrada-familia.jpg" alt="The Sagrada Família basilica in Barcelona">
           <figcaption>Sagrada Família</figcaption>
         </figure>
         <figure class="carousel-slide">
-          <img src="images/barcelona-park-guell.jpg" alt="Park Güell mosaics">
+          <img src="images/barcelona-park-guell.jpg" alt="Park Güell mosaic benches">
           <figcaption>Park Güell</figcaption>
         </figure>
         <figure class="carousel-slide">
-          <img src="images/barcelona-hafen.jpg" alt="Barcelona harbor">
+          <img src="images/barcelona-hafen.jpg" alt="Barcelona harbor area">
           <figcaption>Barcelona Harbor</figcaption>
         </figure>
 
         <div class="carousel-controls">
-          <button class="carousel-prev">‹</button>
-          <button class="carousel-next">›</button>
+          <button class="carousel-prev" aria-label="Previous image">‹</button>
+          <button class="carousel-next" aria-label="Next image">›</button>
         </div>
       </div>
     </section>
@@ -75,17 +74,26 @@
 
         <div class="card-grid card-grid-3">
           <article class="card">
-            <figure><img src="images/barcelona-arc-de-triomf.jpg"><figcaption>Arc de Triomf</figcaption></figure>
+            <figure>
+              <img src="images/barcelona-arc-de-triomf.jpg" alt="Arc de Triomf monument in Barcelona">
+              <figcaption>Arc de Triomf</figcaption>
+            </figure>
             <p>A beautiful reddish arch built for the 1888 World Fair.</p>
           </article>
 
           <article class="card">
-            <figure><img src="images/barcelona-casa-batllo.jpg"><figcaption>Casa Batlló</figcaption></figure>
+            <figure>
+              <img src="images/barcelona-casa-batllo.jpg" alt="Casa Batlló building facade designed by Gaudí">
+              <figcaption>Casa Batlló</figcaption>
+            </figure>
             <p>One of Gaudí’s masterpieces with a dreamlike facade.</p>
           </article>
 
           <article class="card">
-            <figure><img src="images/barcelona-placa-espanya.jpg"><figcaption>Plaça Espanya</figcaption></figure>
+            <figure>
+              <img src="images/barcelona-placa-espanya.jpg" alt="Plaça Espanya square with towers">
+              <figcaption>Plaça Espanya</figcaption>
+            </figure>
             <p>One of the most famous squares with great city views.</p>
           </article>
         </div>
@@ -99,18 +107,23 @@
         <p>Tapas, markets, and long evenings on lively plazas.</p>
 
         <div class="card-grid card-grid-3">
-
           <article class="card">
-            <figure><img src="images/barcelona-hotel-w.jpg"><figcaption>W Hotel Area</figcaption></figure>
+            <figure>
+              <img src="images/barcelona-hotel-w.jpg" alt="W Hotel Barcelona building near the sea">
+              <figcaption>W Hotel Area</figcaption>
+            </figure>
             <p>Fantastic area for seaside dining and relaxing.</p>
           </article>
 
           <article class="card">
-            <figure><img src="images/barcelona-riesenrad.jpg"><figcaption>Ferris Wheel</figcaption></figure>
+            <figure>
+              <img src="images/barcelona-riesenrad.jpg" alt="Ferris wheel overlooking Barcelona city">
+              <figcaption>Ferris Wheel</figcaption>
+            </figure>
             <p>Great views and a fun cultural experience.</p>
           </article>
 
-          <!-- UPGRADED DYNAMIC FOOD TIP CARD -->
+          <!-- Tip Card -->
           <article class="card highlight tip-card">
             <div class="tip-header">
               <span class="tip-emoji">💡</span>
@@ -142,7 +155,7 @@
           </ul>
 
           <div class="map-wrapper">
-            <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=2.146%2C41.372%2C2.204%2C41.403&layer=mapnik"></iframe>
+            <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=2.146%2C41.372%2C2.204%2C41.403&layer=mapnik" title="Map of Barcelona"></iframe>
           </div>
         </div>
       </div>
@@ -155,10 +168,22 @@
         <p>A few impressions from around the city.</p>
 
         <div class="gallery-grid">
-          <figure><img src="images/barcelona-park-guell.jpg"><figcaption>Park Güell</figcaption></figure>
-          <figure><img src="images/barcelona-sagrat-cor.jpg"><figcaption>Sagrat Cor</figcaption></figure>
-          <figure><img src="images/barcelona-hafen.jpg"><figcaption>Harbor</figcaption></figure>
-          <figure><img src="images/barcelona-sagrada-familia.jpg"><figcaption>Sagrada Família</figcaption></figure>
+          <figure>
+            <img src="images/barcelona-park-guell.jpg" alt="Park Güell view with colorful mosaics">
+            <figcaption>Park Güell</figcaption>
+          </figure>
+          <figure>
+            <img src="images/barcelona-sagrat-cor.jpg" alt="Sagrat Cor church on Tibidabo hill">
+            <figcaption>Sagrat Cor</figcaption>
+          </figure>
+          <figure>
+            <img src="images/barcelona-hafen.jpg" alt="Barcelona harbor docks">
+            <figcaption>Harbor</figcaption>
+          </figure>
+          <figure>
+            <img src="images/barcelona-sagrada-familia.jpg" alt="Close-up of Sagrada Família towers">
+            <figcaption>Sagrada Família</figcaption>
+          </figure>
         </div>
       </div>
     </section>
