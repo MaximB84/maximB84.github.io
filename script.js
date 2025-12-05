@@ -1,101 +1,98 @@
-/* ---------------------------
-   Mobile Navigation Toggle
-----------------------------*/
+/* ============================
+   MOBILE NAVIGATION
+============================ */
 const menuToggle = document.querySelector('.menu-toggle');
 const body = document.body;
-const nav = document.getElementById('site-nav');
 
-if (menuToggle && nav) {
+if(menuToggle){
   menuToggle.addEventListener('click', () => {
-    const isOpen = body.classList.toggle('nav-open');
-    menuToggle.setAttribute('aria-expanded', String(isOpen));
-  });
-
-  nav.addEventListener('click', (event) => {
-    if (event.target.tagName === 'A' && body.classList.contains('nav-open')) {
-      body.classList.remove('nav-open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-    }
+    body.classList.toggle('nav-open');
+    menuToggle.setAttribute('aria-expanded', body.classList.contains('nav-open'));
   });
 }
 
 
-/* ---------------------------
-   Tip of the Day – Hero Button
-----------------------------*/
-const tipsHero = [
-  'Buy tickets for Sagrada Família in advance to avoid long lines.',
-  'Walk as much as you can — many sights are closer than they appear.',
-  'Explore at least one neighbourhood away from tourist hotspots.',
-  'Carry a reusable bottle — drinking fountains are everywhere.',
-  'Use the metro late at night instead of taxis to save money.',
-  'Try churros with hot chocolate at small local cafés.',
-  'Sunset at the beach is the perfect way to end the day.'
+/* ============================
+   HERO — RANDOM TIP BUTTON
+============================ */
+const heroTips = [
+  "Buy Sagrada Família tickets in advance to skip lines.",
+  "Walk instead of taking taxis – Barcelona is very walkable.",
+  "Use the metro late evening – cheap & safe.",
+  "Bring a reusable bottle — free water fountains everywhere.",
+  "Explore El Born & Gràcia – less touristy & lovely vibes.",
+  "Visit Barceloneta early morning for a calm beach walk.",
+  "Even locals love vermut before lunch — try it!"
 ];
 
-const tipButton = document.getElementById('random-tip-btn');
-const tipOutput = document.getElementById('random-tip');
+const heroBtn = document.getElementById("random-tip-btn");
+const heroOutput = document.getElementById("random-tip");
 
-function showRandomHeroTip() {
-  const randomIndex = Math.floor(Math.random() * tipsHero.length);
-  tipOutput.textContent = tipsHero[randomIndex];
+function showHeroTip(){
+  if(heroOutput){
+    const random = Math.floor(Math.random() * heroTips.length);
+    heroOutput.textContent = heroTips[random];
+  }
 }
 
-if (tipButton && tipOutput) {
-  tipButton.addEventListener('click', showRandomHeroTip);
-  showRandomHeroTip(); // show once on page load
+if(heroBtn){
+  heroBtn.addEventListener("click", showHeroTip);
+  showHeroTip(); // zeigt direkt einen Tipp beim Laden
 }
 
 
-/* ---------------------------
-   DAILY TIP CARD – Food & Culture
-----------------------------*/
-const foodDailyTips = [
-  'Try the <em>menú del día</em> — 3 courses for a great price.',
-  'Visit Boqueria Market early — fresh fruit & olives!', 
-  'Order <strong>patatas bravas</strong> — classic Catalan tapas.',
-  'Paella tastes best near the sea — avoid tourist traps.',
-  'Vermouth Sunday is a tradition — cozy bars everywhere.',
-  'Try <strong>pan con tomate</strong> — simple & delicious!',
-  'Look for local bakeries — fresh croissants are amazing.',
-  'Many museums are free on the first Sunday of each month.'
+
+/* ============================
+   FOOD & CULTURE TIP CARD
+============================ */
+const foodTips = [
+  "Try *pan con tomate* — simple, fresh & delicious.",
+  "Order *menú del día* — 3 courses for a small price.",
+  "Try *patatas bravas* in local bars instead tourist spots.",
+  "Go for *bocadillo de jamón* — perfect quick lunch.",
+  "Try *churros con chocolate* near Plaça Catalunya.",
+  "Markets like *Boquería* & *Santa Caterina* are food heaven.",
+  "Try *Cava* — local sparkling wine better than champagne for many."
 ];
 
-const dailyTipBox = document.getElementById('daily-tip-text');
+const foodTipText = document.getElementById("daily-tip-text");
 
-function setDailyFoodTip() {
-  const randomIndex = Math.floor(Math.random() * foodDailyTips.length);
-  dailyTipBox.innerHTML = foodDailyTips[randomIndex];
+function setFoodTip(){
+  if(foodTipText){
+    const r = Math.floor(Math.random() * foodTips.length);
+    foodTipText.innerHTML = foodTips[r];
+  }
 }
 
-if (dailyTipBox) setDailyFoodTip();
+setFoodTip(); // sofort bei Laden der Seite
 
 
-/* ---------------------------
-   Image Carousel
-----------------------------*/
+
+/* ============================
+   IMAGE CAROUSEL
+============================ */
 const slides = document.querySelectorAll('.carousel-slide');
-const prevBtn = document.querySelector('.carousel-prev');
-const nextBtn = document.querySelector('.carousel-next');
+const prev = document.querySelector('.carousel-prev');
+const next = document.querySelector('.carousel-next');
 
-let currentSlide = 0;
+let slideIndex = 0;
 
-function updateSlides(index) {
-  slides.forEach((slide, i) => {
-    slide.classList.toggle('is-active', i === index);
-  });
+function updateSlides(){
+  slides.forEach((slide, i) =>
+    slide.classList.toggle('is-active', i === slideIndex)
+  );
 }
 
-if (slides.length > 0 && prevBtn && nextBtn) {
-  prevBtn.addEventListener('click', () => {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    updateSlides(currentSlide);
+if(slides.length > 0){
+  updateSlides();
+
+  next?.addEventListener("click", () => {
+    slideIndex = (slideIndex + 1) % slides.length;
+    updateSlides();
   });
 
-  nextBtn.addEventListener('click', () => {
-    currentSlide = (currentSlide + 1) % slides.length;
-    updateSlides(currentSlide);
+  prev?.addEventListener("click", () => {
+    slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+    updateSlides();
   });
-
-  updateSlides(currentSlide);
 }
