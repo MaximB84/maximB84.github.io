@@ -9,7 +9,6 @@
 </head>
 
 <body>
-  <!-- Accessibility: skip link -->
   <a class="skip-link" href="#main">Skip to main content</a>
 
   <header class="site-header">
@@ -18,17 +17,15 @@
       <span>Travel Blog</span>
     </div>
 
-    <!-- Mobile menu button -->
     <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">
-      <span class="sr-only">Toggle navigation menu</span>
-      ☰
+      <span class="sr-only">Toggle navigation menu</span> ☰
     </button>
 
     <nav id="site-nav" class="site-nav">
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#sights">Sights</a></li>
-        <li><a href="#food">Food &amp; Culture</a></li>
+        <li><a href="#food">Food & Culture</a></li>
         <li><a href="#tips">Travel Tips</a></li>
         <li><a href="#gallery">Gallery</a></li>
       </ul>
@@ -37,38 +34,31 @@
 
   <main id="main">
 
-    <!-- HERO SECTION -->
+    <!-- HERO -->
     <section id="home" class="section hero">
       <div class="hero-text">
         <h1>Welcome to Barcelona</h1>
         <p class="hero-subtitle">Discover the city of sun, art, and tapas.</p>
 
-        <button type="button" class="btn primary" id="random-tip-btn">
-          Tip of the Day
-        </button>
+        <button type="button" class="btn primary" id="random-tip-btn">Tip of the Day</button>
         <p id="random-tip" class="random-tip" aria-live="polite"></p>
 
         <a href="#sights" class="btn secondary">Start exploring</a>
       </div>
 
-      <!-- HERO CAROUSEL -->
       <div class="hero-carousel" aria-label="Barcelona highlights">
-
         <figure class="carousel-slide is-active">
-          <img src="images/barcelona-sagrada-familia.jpg" 
-               alt="The Sagrada Família basilica in Barcelona.">
+          <img src="images/barcelona-sagrada-familia.jpg" alt="The Sagrada Família basilica in Barcelona.">
           <figcaption>Sagrada Família</figcaption>
         </figure>
 
         <figure class="carousel-slide">
-          <img src="images/barcelona-park-guell.jpg" 
-               alt="Colorful mosaic benches in Park Güell.">
+          <img src="images/barcelona-park-guell.jpg" alt="Colorful mosaic benches in Park Güell.">
           <figcaption>Park Güell</figcaption>
         </figure>
 
         <figure class="carousel-slide">
-          <img src="images/barcelona-hafen.jpg" 
-               alt="Barcelona harbor with blue water and boats.">
+          <img src="images/barcelona-hafen.jpg" alt="Barcelona harbor with blue water and boats.">
           <figcaption>Barcelona Harbor</figcaption>
         </figure>
 
@@ -86,11 +76,9 @@
         <p>Some of the must-see places when you visit Barcelona.</p>
 
         <div class="card-grid card-grid-3">
-
           <article class="card">
             <figure>
-              <img src="images/barcelona-arc-de-triomf.jpg" 
-                   alt="Arc de Triomf in Barcelona.">
+              <img src="images/barcelona-arc-de-triomf.jpg" alt="Arc de Triomf in Barcelona.">
               <figcaption>Arc de Triomf</figcaption>
             </figure>
             <p>A beautiful reddish arch built for the 1888 World Fair.</p>
@@ -98,8 +86,7 @@
 
           <article class="card">
             <figure>
-              <img src="images/barcelona-casa-batllo.jpg" 
-                   alt="The colorful facade of Casa Batlló by Gaudí.">
+              <img src="images/barcelona-casa-batllo.jpg" alt="The colorful facade of Casa Batlló by Gaudí.">
               <figcaption>Casa Batlló</figcaption>
             </figure>
             <p>One of Gaudí’s masterpieces with a dreamlike facade.</p>
@@ -107,13 +94,11 @@
 
           <article class="card">
             <figure>
-              <img src="images/barcelona-placa-espanya.jpg" 
-                   alt="Placa Espanya with fountains and towers.">
+              <img src="images/barcelona-placa-espanya.jpg" alt="Placa Espanya with fountains and towers.">
               <figcaption>Plaça Espanya</figcaption>
             </figure>
             <p>One of the most famous squares with great city views.</p>
           </article>
-
         </div>
       </div>
     </section>
@@ -121,34 +106,25 @@
     <!-- FOOD & CULTURE -->
     <section id="food" class="section">
       <div class="section-inner">
-        <h2>Food &amp; Culture</h2>
+        <h2>Food & Culture</h2>
         <p>Tapas, markets, and long evenings on lively plazas.</p>
 
         <div class="card-grid card-grid-3">
-
           <article class="card">
-            <figure>
-              <img src="images/barcelona-hotel-w.jpg" 
-                   alt="Barcelona W Hotel near the beach.">
-              <figcaption>W Hotel Area</figcaption>
-            </figure>
+            <figure><img src="images/barcelona-hotel-w.jpg"><figcaption>W Hotel Area</figcaption></figure>
             <p>Fantastic area for seaside dining and relaxing.</p>
           </article>
 
           <article class="card">
-            <figure>
-              <img src="images/barcelona-riesenrad.jpg" 
-                   alt="Colorful ferris wheel in Barcelona.">
-              <figcaption>Ferris Wheel</figcaption>
-            </figure>
+            <figure><img src="images/barcelona-riesenrad.jpg"><figcaption>Ferris Wheel</figcaption></figure>
             <p>Great views and a fun cultural experience.</p>
           </article>
 
-          <article class="card highlight">
+          <!-- NEW DYNAMIC TIP CARD -->
+          <article class="card highlight" id="daily-tip-card">
             <h3>Tip of the Day</h3>
-            <p>Try the <em>menú del día</em> — an affordable 3-course lunch menu offered in many local restaurants.</p>
+            <p id="daily-tip-text">Loading tip...</p>
           </article>
-
         </div>
       </div>
     </section>
@@ -157,24 +133,18 @@
     <section id="tips" class="section section-alt">
       <div class="section-inner">
         <h2>Travel Tips</h2>
-
         <div class="tips-layout">
-
           <ul class="tips-list">
-            <li><span class="tip-icon">🚌</span><strong>Public transport:</strong> Buy a T-casual ticket to save money.</li>
-            <li><span class="tip-icon">🌞</span><strong>Best time:</strong> Late spring and early autumn are perfect.</li>
-            <li><span class="tip-icon">ℹ️</span><strong>Tourist info:</strong> Start at Plaça de Catalunya to grab free maps.</li>
+            <li>🚌 <strong>Public transport:</strong> Buy a T-casual ticket to save money.</li>
+            <li>🌞 <strong>Best time:</strong> Late spring & early autumn are perfect.</li>
+            <li>ℹ️ <strong>Tourist info:</strong> Free maps at Plaça de Catalunya.</li>
           </ul>
 
-          <!-- Embedded Map -->
           <div class="map-wrapper">
-            <iframe
-              title="Map of Barcelona city center"
+            <iframe title="Barcelona Map"
               src="https://www.openstreetmap.org/export/embed.html?bbox=2.146%2C41.372%2C2.204%2C41.403&amp;layer=mapnik"
-              loading="lazy">
-            </iframe>
+              loading="lazy"></iframe>
           </div>
-
         </div>
       </div>
     </section>
@@ -184,29 +154,11 @@
       <div class="section-inner">
         <h2>Photo Gallery</h2>
         <p>A few impressions from around the city.</p>
-
         <div class="gallery-grid">
-
-          <figure>
-            <img src="images/barcelona-park-guell.jpg" alt="Park Güell mosaics.">
-            <figcaption>Park Güell</figcaption>
-          </figure>
-
-          <figure>
-            <img src="images/barcelona-sagrat-cor.jpg" alt="Sagrat Cor church on Tibidabo.">
-            <figcaption>Sagrat Cor</figcaption>
-          </figure>
-
-          <figure>
-            <img src="images/barcelona-hafen.jpg" alt="Barcelona harbor area.">
-            <figcaption>Harbor</figcaption>
-          </figure>
-
-          <figure>
-            <img src="images/barcelona-sagrada-familia.jpg" alt="Sagrada Família tower details.">
-            <figcaption>Sagrada Família</figcaption>
-          </figure>
-
+          <figure><img src="images/barcelona-park-guell.jpg"><figcaption>Park Güell</figcaption></figure>
+          <figure><img src="images/barcelona-sagrat-cor.jpg"><figcaption>Sagrat Cor</figcaption></figure>
+          <figure><img src="images/barcelona-hafen.jpg"><figcaption>Harbor</figcaption></figure>
+          <figure><img src="images/barcelona-sagrada-familia.jpg"><figcaption>Sagrada Família</figcaption></figure>
         </div>
       </div>
     </section>
