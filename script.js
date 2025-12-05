@@ -11,7 +11,6 @@ if (menuToggle && nav) {
     menuToggle.setAttribute('aria-expanded', String(isOpen));
   });
 
-  // Close menu when a nav link is selected
   nav.addEventListener('click', (event) => {
     if (event.target.tagName === 'A' && body.classList.contains('nav-open')) {
       body.classList.remove('nav-open');
@@ -22,34 +21,58 @@ if (menuToggle && nav) {
 
 
 /* ---------------------------
-   Tip of the Day
+   Tip of the Day – Hero Button
 ----------------------------*/
-const tips = [
+const tipsHero = [
   'Buy tickets for Sagrada Família in advance to avoid long lines.',
-  'Walk as much as you can – many sights are closer than they look.',
-  'Explore at least one neighbourhood away from tourist areas.',
-  'Carry a reusable water bottle – free fountains are everywhere.',
-  'Use the metro late at night instead of taxis to save money.'
+  'Walk as much as you can — many sights are closer than they appear.',
+  'Explore at least one neighbourhood away from tourist hotspots.',
+  'Carry a reusable bottle — drinking fountains are everywhere.',
+  'Use the metro late at night instead of taxis to save money.',
+  'Try churros with hot chocolate at small local cafés.',
+  'Sunset at the beach is the perfect way to end the day.'
 ];
 
 const tipButton = document.getElementById('random-tip-btn');
 const tipOutput = document.getElementById('random-tip');
 
-function showRandomTip() {
-  const randomIndex = Math.floor(Math.random() * tips.length);
-  tipOutput.textContent = tips[randomIndex];
+function showRandomHeroTip() {
+  const randomIndex = Math.floor(Math.random() * tipsHero.length);
+  tipOutput.textContent = tipsHero[randomIndex];
 }
 
 if (tipButton && tipOutput) {
-  tipButton.addEventListener('click', showRandomTip);
-
-  // Show a random tip on load for better UX
-  showRandomTip();
+  tipButton.addEventListener('click', showRandomHeroTip);
+  showRandomHeroTip(); // show once on page load
 }
 
 
 /* ---------------------------
-   Image Carousel (Manual)
+   DAILY TIP CARD – Food & Culture
+----------------------------*/
+const foodDailyTips = [
+  'Try the <em>menú del día</em> — 3 courses for a great price.',
+  'Visit Boqueria Market early — fresh fruit & olives!', 
+  'Order <strong>patatas bravas</strong> — classic Catalan tapas.',
+  'Paella tastes best near the sea — avoid tourist traps.',
+  'Vermouth Sunday is a tradition — cozy bars everywhere.',
+  'Try <strong>pan con tomate</strong> — simple & delicious!',
+  'Look for local bakeries — fresh croissants are amazing.',
+  'Many museums are free on the first Sunday of each month.'
+];
+
+const dailyTipBox = document.getElementById('daily-tip-text');
+
+function setDailyFoodTip() {
+  const randomIndex = Math.floor(Math.random() * foodDailyTips.length);
+  dailyTipBox.innerHTML = foodDailyTips[randomIndex];
+}
+
+if (dailyTipBox) setDailyFoodTip();
+
+
+/* ---------------------------
+   Image Carousel
 ----------------------------*/
 const slides = document.querySelectorAll('.carousel-slide');
 const prevBtn = document.querySelector('.carousel-prev');
@@ -63,7 +86,6 @@ function updateSlides(index) {
   });
 }
 
-// Only activate if carousel exists
 if (slides.length > 0 && prevBtn && nextBtn) {
   prevBtn.addEventListener('click', () => {
     currentSlide = (currentSlide - 1 + slides.length) % slides.length;
@@ -75,6 +97,5 @@ if (slides.length > 0 && prevBtn && nextBtn) {
     updateSlides(currentSlide);
   });
 
-  // Set initial state
   updateSlides(currentSlide);
 }
